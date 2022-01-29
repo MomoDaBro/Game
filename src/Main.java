@@ -15,8 +15,8 @@ public class Main {
         int EN1baseHP = 15;
         int EN1baseDamage = 30;
         String EN1name = "Ranged unit";
-        int EN2baseHP = 30;
-        int EN2baseDamage = 20;
+        int EN2baseHP = 25;
+        int EN2baseDamage = 25;
         String EN2name = "Magic unit";
         int shieldDamageReduction = 5;
 
@@ -49,6 +49,8 @@ public class Main {
 
         int HRspecificHP = HRbaseHealthPoints;
         int HRcounterDamage = HRbaseDamage - 5;
+        float FloatENspecificATK;
+        int convertENspecificATK;
         while (true) {
             int roundENspecificATK = ENspecificATK;
             System.out.println(ENspecificName + " currently has " + ENspecificHP + " health");
@@ -59,14 +61,19 @@ public class Main {
             if (action == 1) {
                 System.out.println(characterName + " attacks " + ENspecificName + " for " + HRbaseDamage + " damage!");
                 ENspecificHP -= HRbaseDamage;
+                System.out.println("The " + ENspecificName + " attacks!");
             } else if (action == 2) {
                 System.out.println(characterName + " blocks the attack!");
                 int HRblockChance = ThreadLocalRandom.current().nextInt(3);
                 if (HRblockChance == 0) {
                     roundENspecificATK = 0;
                     System.out.println(characterName + " counters " + ENspecificName + " for " + HRbaseDamage + " damage!");
+                    ENspecificHP -= HRbaseDamage;
                 } else {
-                    roundENspecificATK -= 3;
+                    FloatENspecificATK = ENspecificATK;
+                    convertENspecificATK = (int) (FloatENspecificATK * (2/5));
+                    roundENspecificATK = convertENspecificATK;
+                    System.out.println("The " + ENspecificName + " attacks!");
                 }
 
             } else if (action == 4) {
@@ -81,8 +88,14 @@ public class Main {
                 break;
             }
             HRspecificHP -= roundENspecificATK;
-            System.out.println("The " + ENspecificName + " attacks!");
+
             System.out.println(characterName + " has taken " + roundENspecificATK + " damage!");
+            if (HRspecificHP <= 0){
+                System.out.println(characterName + " has been slain!");
+                System.out.println("₲₳₥Ɇ ØVɆⱤ");
+                break;
+
+            }
 
         }
 

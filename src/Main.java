@@ -61,7 +61,7 @@ public class Main {
                 ENspecificHP -= HRbaseDamage;
             } else if (action == 2) {
                 System.out.println(characterName + " blocks the attack!");
-                int HRblockChance = ThreadLocalRandom.current().nextInt(2);
+                int HRblockChance = ThreadLocalRandom.current().nextInt(3);
                 if (HRblockChance == 0) {
                     roundENspecificATK = 0;
                     System.out.println(characterName + " counters " + ENspecificName + " for " + HRbaseDamage + " damage!");

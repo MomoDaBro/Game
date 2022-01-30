@@ -48,8 +48,7 @@ public class Main {
         }
         System.out.println("A " + ENspecificName + " appears!");
         int HRspecificHP = HRbaseHealthPoints;
-        int HRcounterDamage = HRbaseDamage - 5;
-        float FloatENspecificATK;
+        double DoubleENspecificATK;
         int convertENspecificATK;
         while (true) {
             int roundENspecificATK = ENspecificATK;
@@ -72,8 +71,8 @@ public class Main {
                     System.out.println(characterName + " counters " + ENspecificName + " for " + HRbaseDamage + " damage!");
                     ENspecificHP -= HRbaseDamage;
                 } else {
-                    FloatENspecificATK = ENspecificATK;
-                    convertENspecificATK = (int) (FloatENspecificATK * (40.0f/100.0f));
+                    DoubleENspecificATK = ENspecificATK;
+                    convertENspecificATK = (int) (DoubleENspecificATK * (40.0/100.0));
                     roundENspecificATK = convertENspecificATK;
                     System.out.println("The " + ENspecificName + " attacks!");
                 }
@@ -143,8 +142,8 @@ public class Main {
                     System.out.println(characterName + " counters " + ENspecificName + " for " + HRbaseDamage + " damage!");
                     ENspecificHP -= HRbaseDamage;
                 } else {
-                    FloatENspecificATK = ENspecificATK;
-                    convertENspecificATK = (int) (FloatENspecificATK * (40.0f/100.0f));
+                    DoubleENspecificATK = ENspecificATK;
+                    convertENspecificATK = (int) (DoubleENspecificATK * (40.0f/100.0f));
                     roundENspecificATK = convertENspecificATK;
                     System.out.println("The " + ENspecificName + " attacks!");
                 }

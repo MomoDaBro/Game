@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -19,6 +21,15 @@ public class Main {
         int EN2baseDamage = 25;
         String EN2name = "Magic unit";
 
+        List<Enemy> EnemyList = new ArrayList<>();
+
+        Enemy enemy1 = new Enemy("Melee Unit", 30, 10);
+        Enemy enemy2 = new Enemy("Ranged Unit", 15, 30);
+        Enemy enemy3 = new Enemy("Magic Unit", 25, 25);
+
+        EnemyList.add(enemy1);
+        EnemyList.add(enemy2);
+        EnemyList.add(enemy3);
 
 
         System.out.println("Please name your character");

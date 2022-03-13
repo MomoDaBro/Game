@@ -1,8 +1,8 @@
 public class Enemy {
 
-    String enemyName;
-    int enemyHealth;
-    int enemyDamage;
+    private final String enemyName;
+    private final int enemyDamage;
+    private int enemyHealth;
 
     public Enemy(String enemyName, int enemyHealth, int enemyDamage) {
         this.enemyName = enemyName;
@@ -10,15 +10,19 @@ public class Enemy {
         this.enemyDamage = enemyDamage;
     }
 
-    public String GetName() {
+    public void takeDamage(int damage) {
+        this.enemyHealth -= damage;
+    }
+
+    public String getName() {
         return enemyName;
     }
 
-    public int GetDamage() {
+    public int getDamage() {
         return enemyDamage;
     }
 
-    public int GetHealth() {
+    public int getHealth() {
         return enemyHealth;
     }
 
